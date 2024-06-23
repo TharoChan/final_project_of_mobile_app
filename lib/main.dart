@@ -1,10 +1,24 @@
-import 'package:final_project_of_mobile_app/state_app.dart';
 import 'package:flutter/material.dart';
+import 'package:final_project_of_mobile_app/DI/service_locator.dart';
+import 'package:final_project_of_mobile_app/screens/home/dashboard_screen.dart';
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Final Mobile Project',
-    home: providerStateApp(),
-  ));
+  initServiceLocator();
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const DashBoardScreen(),
+      title: 'Final Project of Mobile App',
+      theme: ThemeData(
+        splashColor: Colors.transparent,
+      ),
+    );
+  }
 }
