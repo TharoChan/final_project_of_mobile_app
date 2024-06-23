@@ -1,6 +1,6 @@
 # Final Project of Mobile App
 
-![Spotify Clone Logo]
+<img src="assets/icon/icon.png" alt="Spotify" width="300" height="300">
 
 ## Table of Contents
 
