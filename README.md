@@ -34,25 +34,16 @@ Welcome to the Spotify Clone project! This mobile app replicates the core featur
 
 1. **Clone the Repository:**
     ```sh
-    git clone https://github.com/yourusername/spotify_clone.git
-    cd spotify_clone
+    git clone https://github.com/TharoChan/final_project_of_mobile_app.git
+    cd final_project_of_mobile_app
     ```
 
 2. **Install Dependencies:**
     ```sh
     flutter pub get
     ```
-
-3. **Configure API Keys:**
-   - Create a `.env` file in the root directory.
-   - Add your Spotify API credentials:
-     ```
-     CLIENT_ID=your_spotify_client_id
-     CLIENT_SECRET=your_spotify_client_secret
-     REDIRECT_URI=your_redirect_uri
-     ```
-
-4. **Run the App:**
+    
+3. **Run the App:**
     ```sh
     flutter run
     ```
