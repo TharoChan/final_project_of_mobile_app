@@ -11,14 +11,3 @@ updates:
       - TharoChan
     assignees:
       - TharoChan
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: daily
-      time: 00:00
-      timezone: Asia/Phnom_Penh
-    open-pull-requests-limit: 10
-    reviewers:
-      - TharoChan
-    assignees:
-      - TharoChan
