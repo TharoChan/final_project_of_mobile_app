@@ -1,3 +1,5 @@
+import 'package:final_project_of_mobile_app/screens/dev/developer_screen.dart';
+import 'package:final_project_of_mobile_app/screens/home/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,6 +31,7 @@ class HomeScreen extends StatelessWidget {
               child: CustomScrollView(
                 slivers: [
                   _Header(),
+                  _AlbumLists(),
                   _JumpBackin(),
                   _TopMixes(),
                   _RecentPlays(),
@@ -703,11 +706,56 @@ class _Header extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(width: 10),
+                Container(
+                  height: 35,
+                  decoration: const BoxDecoration(
+                    color: MyColors.darGreyColor,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(145),
+                    ),
+                  ),
+                  child: Center(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DeveloperScreen()));
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 15),
+                        child: Text(
+                          "Developers",
+                          style: TextStyle(
+                            fontFamily: "AM",
+                            fontSize: 14,
+                            color: MyColors.whiteColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _AlbumLists extends StatelessWidget {
+  const _AlbumLists({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 30),
+        child: Column(
+          children: [
             Column(
               children: [
                 Row(
