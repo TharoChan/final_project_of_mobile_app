@@ -1,6 +1,6 @@
+import 'package:final_project_of_mobile_app/screens/auth/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:final_project_of_mobile_app/DI/service_locator.dart';
-import 'package:final_project_of_mobile_app/screens/home/dashboard_screen.dart';
 
 void main() {
   initServiceLocator();
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const DashBoardScreen(),
+      home: const SplashScreen(),
       title: 'Final Project of Mobile App',
       theme: ThemeData(
         splashColor: Colors.transparent,
