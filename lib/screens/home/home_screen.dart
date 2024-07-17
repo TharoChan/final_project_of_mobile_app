@@ -1,5 +1,4 @@
 import 'package:final_project_of_mobile_app/screens/dev/developer_screen.dart';
-import 'package:final_project_of_mobile_app/screens/home/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +30,6 @@ class HomeScreen extends StatelessWidget {
               child: CustomScrollView(
                 slivers: [
                   _Header(),
-                  _AlbumLists(),
                   _JumpBackin(),
                   _TopMixes(),
                   _RecentPlays(),
@@ -747,7 +745,6 @@ class _Header extends StatelessWidget {
 }
 
 class _AlbumLists extends StatelessWidget {
-  const _AlbumLists({super.key});
 
   @override
   Widget build(BuildContext context) {
