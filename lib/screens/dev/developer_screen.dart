@@ -1,10 +1,11 @@
 import 'package:final_project_of_mobile_app/constants/constants.dart';
-import 'package:final_project_of_mobile_app/screens/home/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 
 class DeveloperScreen extends StatefulWidget {
+  const DeveloperScreen({super.key});
+
   @override
-  _DeveloperScreenState createState() => _DeveloperScreenState();
+  State<DeveloperScreen> createState() => _DeveloperScreenState();
 }
 
 class _DeveloperScreenState extends State<DeveloperScreen> {
@@ -34,8 +35,8 @@ class _DeveloperScreenState extends State<DeveloperScreen> {
       backgroundColor: MyColors.blackColor,
       body: Center(
         child: ListView(
-          padding: EdgeInsets.symmetric(vertical: 20),
-          children: [
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          children: const [
             ProfileCard(
               name: 'Liza John',
               specialization:
@@ -99,7 +100,8 @@ class ProfileCard extends StatefulWidget {
   final bool recommendationStatus;
   final Color cardColor;
 
-  ProfileCard({
+  const ProfileCard({
+    super.key,
     required this.name,
     required this.specialization,
     required this.description,
@@ -110,7 +112,7 @@ class ProfileCard extends StatefulWidget {
   });
 
   @override
-  _ProfileCardState createState() => _ProfileCardState();
+  State<ProfileCard> createState() => _ProfileCardState();
 }
 
 class _ProfileCardState extends State<ProfileCard> {
@@ -123,7 +125,7 @@ class _ProfileCardState extends State<ProfileCard> {
       padding: const EdgeInsets.all(16),
       child: Container(
         width: 300,
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: widget.cardColor,
           borderRadius: BorderRadius.circular(16),
@@ -133,54 +135,54 @@ class _ProfileCardState extends State<ProfileCard> {
           children: [
             Text(
               widget.specialization,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
               widget.description,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.w800),
               textAlign: TextAlign.start,
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
               widget.date,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.w300),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Center(
               child: CircleAvatar(
                 radius: 100,
                 backgroundImage: AssetImage(widget.image),
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Center(
               child: Text(
                 widget.name,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 8),
-            Text(
+            const SizedBox(height: 8),
+            const Text(
               "I'm a passionate person who likes to solve problems for others but somehow can't seem to solve my own problem...",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.w300),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -193,7 +195,7 @@ class _ProfileCardState extends State<ProfileCard> {
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
                     backgroundColor:
-                        isLiked ? Color(0xFF23F700) : Colors.grey[800],
+                        isLiked ? const Color(0xFF23F700) : Colors.grey[800],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18),
                     ),
@@ -204,7 +206,7 @@ class _ProfileCardState extends State<ProfileCard> {
                         isLiked ? Icons.favorite : Icons.favorite_border,
                         color: isLiked ? Colors.black : Colors.white,
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Text(
                         'Like',
                         style: TextStyle(
@@ -215,7 +217,7 @@ class _ProfileCardState extends State<ProfileCard> {
                     ],
                   ),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
@@ -225,7 +227,7 @@ class _ProfileCardState extends State<ProfileCard> {
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black,
                     backgroundColor:
-                        isRecommended ? Color(0xFF23F700) : Colors.grey[800],
+                        isRecommended ? const Color(0xFF23F700) : Colors.grey[800],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18),
                     ),
@@ -238,7 +240,7 @@ class _ProfileCardState extends State<ProfileCard> {
                             : Icons.check_circle_outline,
                         color: isRecommended ? Colors.black : Colors.white,
                       ),
-                      SizedBox(width: 10),
+                      const SizedBox(width: 10),
                       Text(
                         'Recommend',
                         style: TextStyle(
