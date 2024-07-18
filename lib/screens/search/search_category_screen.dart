@@ -1,3 +1,5 @@
+import 'package:final_project_of_mobile_app/screens/home/setting_screen.dart';
+import 'package:final_project_of_mobile_app/screens/search/category_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -14,6 +16,7 @@ class SearchCategoryScreen extends StatefulWidget {
 
 class _SearchCategoryScreenState extends State<SearchCategoryScreen> {
   String? scanResault;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,26 +35,41 @@ class _SearchCategoryScreenState extends State<SearchCategoryScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 30, bottom: 20),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            "Search",
-                            style: TextStyle(
-                              fontFamily: "AB",
-                              fontSize: 25,
-                              color: MyColors.whiteColor,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SettingScreen(),
+                                ),
+                              );
+                            },
+                            child: const Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                CircleAvatar(
+                                  radius: 20,
+                                  backgroundImage:
+                                      AssetImage("assets/images/myImage.png"),
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  "Search",
+                                  style: TextStyle(
+                                    fontFamily: "AB",
+                                    fontSize: 25,
+                                    color: MyColors.whiteColor,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
+                          const Spacer(),
                           GestureDetector(
                             onTap: () {
                               barcodeScanner();
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) =>
-                              //         const ScanSpotifyCodeScreen(),
-                              //   ),
-                              // );
                             },
                             child: Image.asset("assets/images/icon_camera.png"),
                           ),
@@ -64,7 +82,7 @@ class _SearchCategoryScreenState extends State<SearchCategoryScreen> {
                     child: Padding(
                       padding: EdgeInsets.only(top: 17, bottom: 17),
                       child: Text(
-                        "Your top genres",
+                        "Explore New Genres",
                         style: TextStyle(
                           fontFamily: "AM",
                           fontSize: 16,
@@ -74,14 +92,8 @@ class _SearchCategoryScreenState extends State<SearchCategoryScreen> {
                       ),
                     ),
                   ),
-                  const SliverToBoxAdapter(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        _ImageContainer(title: "", image: "pop.png"),
-                        _ImageContainer(title: "", image: "indie.png"),
-                      ],
-                    ),
+                  SliverToBoxAdapter(
+                    child: ExploreNewGenres(),
                   ),
                   const SliverToBoxAdapter(
                     child: Padding(
@@ -155,15 +167,37 @@ class _SearchCategoryScreenState extends State<SearchCategoryScreen> {
                       ),
                     ),
                   ),
-                  const SliverToBoxAdapter(
+                  SliverToBoxAdapter(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        _ImageContainer(
-                            title: "2023 Wrapped", image: "2023_wrapped.png"),
-                        _ImageContainer(
-                            title: "Podcasts", image: "podcasts.png"),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const CategoryDetails()),
+                            );
+                          },
+                          child: const _ImageContainer(
+                              title: "", image: "pop.png"),
+                        ),
+                        const _ImageContainer(title: "", image: "indie.png"),
                       ],
+                    ),
+                  ),
+                  const SliverToBoxAdapter(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 12),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          _ImageContainer(
+                              title: "2023 Wrapped", image: "2023_wrapped.png"),
+                          _ImageContainer(
+                              title: "Podcasts", image: "podcasts.png"),
+                        ],
+                      ),
                     ),
                   ),
                   const SliverToBoxAdapter(
@@ -209,6 +243,95 @@ class _SearchCategoryScreenState extends State<SearchCategoryScreen> {
     setState(() {
       this.scanResault = scanResault;
     });
+  }
+}
+
+class ExploreNewGenres extends StatelessWidget {
+  ExploreNewGenres({super.key});
+  final List<GridViewItem> items = [
+    GridViewItem(
+      // color: const Color.fromRGBO(255, 250, 222, 1),
+      text: '#thai HipHop',
+      img: "assets/images/thai_hiphop.png",
+    ),
+    GridViewItem(
+      // color: const Color.fromRGBO(255, 236, 234, 1),
+      text: '#jersey club',
+      img: "assets/images/jersey_club.png",
+    ),
+    GridViewItem(
+      // color: const Color.fromRGBO(211, 245, 229, 1),
+      text: '#folk',
+      img: "assets/images/folk.png",
+    ),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: items.map((item) {
+            return Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                width: 120,
+                height: 150,
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Stack(
+                  children: [
+                    Positioned.fill(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Image.asset(
+                          item.img,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                          ),
+                          color: Color.fromRGBO(96, 96, 96, 0.7),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Center(
+                          child: Text(
+                            item.text,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }).toList(),
+        ),
+      ),
+    );
   }
 }
 
@@ -297,4 +420,13 @@ class _ImageContainer extends StatelessWidget {
       ],
     );
   }
+}
+
+class GridViewItem {
+  final String text;
+  final String img;
+  GridViewItem({
+    required this.text,
+    required this.img,
+  });
 }

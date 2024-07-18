@@ -68,6 +68,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             HomeScreen(),
             SearchCategoryScreen(),
             LibraryScreen(),
+            
           ],
         ),
       ),
