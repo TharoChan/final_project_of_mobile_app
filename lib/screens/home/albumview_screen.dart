@@ -25,7 +25,7 @@ class _AlbumViewScreenState extends State<AlbumViewScreen> {
   double containerInitialHeight = 465;
   double imageOpacity = 1;
   bool showTopBar = false;
-  bool _isInPlay = false;
+  final bool _isInPlay = false;
   @override
   void initState() {
     imagesize = initSize;
@@ -388,8 +388,8 @@ class _AlbumControlButtonsState extends State<_AlbumControlButtons> {
               children: [
                 CircleAvatar(
                   radius: 15,
-                  backgroundImage:
-                      AssetImage('assets/images/artists/${widget.album.artistImage}'),
+                  backgroundImage: AssetImage(
+                      'assets/images/artists/${widget.album.artistImage}'),
                 ),
                 const SizedBox(
                   width: 8,

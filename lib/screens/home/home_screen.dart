@@ -1,5 +1,4 @@
 import 'package:final_project_of_mobile_app/screens/dev/developer_screen.dart';
-import 'package:final_project_of_mobile_app/screens/home/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -721,9 +720,9 @@ class _Header extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DeveloperScreen()));
+                                builder: (context) =>const DeveloperScreen()));
                       },
-                      child: Padding(
+                      child: const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 15),
                         child: Text(
                           "Developers",
@@ -747,7 +746,7 @@ class _Header extends StatelessWidget {
 }
 
 class _AlbumLists extends StatelessWidget {
-  const _AlbumLists({super.key});
+  const _AlbumLists();
 
   @override
   Widget build(BuildContext context) {

@@ -162,7 +162,7 @@ class _ProfileHeader extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 65,
+                  height: 30,
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,

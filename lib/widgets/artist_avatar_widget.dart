@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:final_project_of_mobile_app/constants/constants.dart';
 import 'package:final_project_of_mobile_app/data/model/artist.dart';
 

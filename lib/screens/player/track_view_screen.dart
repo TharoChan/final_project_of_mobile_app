@@ -18,7 +18,7 @@ class _TrackViewScreenState extends State<TrackViewScreen> {
   bool isSwitchedToNextTab = false;
   bool shadowSwitcher = false;
   double _currentNumber = 25;
-  bool _isLiked = false;
+  final bool _isLiked = false;
 
   @override
   Widget build(BuildContext context) {
