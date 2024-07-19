@@ -1,3 +1,4 @@
+import 'package:final_project_of_mobile_app/data/model/grid_view.dart';
 import 'package:final_project_of_mobile_app/screens/home/setting_screen.dart';
 import 'package:final_project_of_mobile_app/screens/search/category_details.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +93,7 @@ class _SearchCategoryScreenState extends State<SearchCategoryScreen> {
                       ),
                     ),
                   ),
-                  SliverToBoxAdapter(
+                  const SliverToBoxAdapter(
                     child: ExploreNewGenres(),
                   ),
                   const SliverToBoxAdapter(
@@ -176,7 +177,8 @@ class _SearchCategoryScreenState extends State<SearchCategoryScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const CategoryDetails()),
+                                  builder: (context) =>
+                                      const CategoryDetails()),
                             );
                           },
                           child: const _ImageContainer(
@@ -246,25 +248,24 @@ class _SearchCategoryScreenState extends State<SearchCategoryScreen> {
   }
 }
 
+final List<GridViewItem> items = [
+  GridViewItem(
+    text: '#thai HipHop',
+    img: "assets/images/thai_hiphop.png",
+  ),
+  GridViewItem(
+    text: '#jersey club',
+    img: "assets/images/jersey_club.png",
+  ),
+  GridViewItem(
+    text: '#folk',
+    img: "assets/images/folk.png",
+  ),
+];
+
 class ExploreNewGenres extends StatelessWidget {
-  ExploreNewGenres({super.key});
-  final List<GridViewItem> items = [
-    GridViewItem(
-      // color: const Color.fromRGBO(255, 250, 222, 1),
-      text: '#thai HipHop',
-      img: "assets/images/thai_hiphop.png",
-    ),
-    GridViewItem(
-      // color: const Color.fromRGBO(255, 236, 234, 1),
-      text: '#jersey club',
-      img: "assets/images/jersey_club.png",
-    ),
-    GridViewItem(
-      // color: const Color.fromRGBO(211, 245, 229, 1),
-      text: '#folk',
-      img: "assets/images/folk.png",
-    ),
-  ];
+  const ExploreNewGenres({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -420,13 +421,4 @@ class _ImageContainer extends StatelessWidget {
       ],
     );
   }
-}
-
-class GridViewItem {
-  final String text;
-  final String img;
-  GridViewItem({
-    required this.text,
-    required this.img,
-  });
 }
