@@ -43,6 +43,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/artists/
+    - assets/images/developer/
     - assets/images/podcasts/
     - assets/images/developer/
     - assets/images/home/

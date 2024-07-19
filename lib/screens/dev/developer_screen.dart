@@ -44,9 +44,9 @@ class _DeveloperScreenState extends State<DeveloperScreen> {
               description: 'Does the Developer Screen UI',
               date: 'July-3rd-2024',
               image:
-                  'assets/images/developer/liza_j.png', // Replace with the actual image URL
+                  'assets/images/developer/liza_j.png',
               recommendationStatus: false,
-              cardColor: Color(0xFF8A8A8A), // Different color for each card
+              cardColor: Color(0xFF8A8A8A),
             ),
             SizedBox(height: 20),
             ProfileCard(
@@ -56,9 +56,9 @@ class _DeveloperScreenState extends State<DeveloperScreen> {
               description: 'Developer Screen',
               date: 'July-3rd-2024',
               image:
-                  'assets/images/developer/panha.png', // Replace with the actual image URL
+                  'assets/images/developer/panha.png',
               recommendationStatus: true,
-              cardColor: Color(0xFF477D95), // Different color for each card
+              cardColor: Color(0xFF477D95),
             ),
             SizedBox(height: 20),
             ProfileCard(
@@ -68,9 +68,9 @@ class _DeveloperScreenState extends State<DeveloperScreen> {
               description: 'Works on backend systems',
               date: 'July-3rd-2024',
               image:
-                  'assets/images/developer/tharo.png', // Replace with the actual image URL
+                  'assets/images/developer/tharo.png',
               recommendationStatus: false,
-              cardColor: Color(0xFF1E3264), // Different color for each card
+              cardColor: Color(0xFF1E3264),
             ),
             SizedBox(height: 20),
             ProfileCard(
@@ -80,9 +80,9 @@ class _DeveloperScreenState extends State<DeveloperScreen> {
               description: 'Frontend specialist',
               date: 'July-3rd-2024',
               image:
-                  'assets/images/developer/liza_c.png', // Replace with the actual image URL
+                  'assets/images/developer/liza_c.png',
               recommendationStatus: true,
-              cardColor: Color(0xFFE13300), // Different color for each card
+              cardColor: Color(0xFFE13300),
             ),
           ],
         ),
