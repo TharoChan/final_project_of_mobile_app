@@ -1,3 +1,4 @@
+import 'package:final_project_of_mobile_app/screens/home/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:final_project_of_mobile_app/constants/constants.dart';
 import 'package:final_project_of_mobile_app/screens/auth/create_email_screen.dart';
@@ -192,12 +193,21 @@ class _ActionButtons extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          const Text(
-            "Log in",
-            style: TextStyle(
-              fontFamily: "AB",
-              fontSize: 16,
-              color: MyColors.whiteColor,
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const DashBoardScreen()),
+              );
+            },
+            child: const Text(
+              "Log in",
+              style: TextStyle(
+                fontFamily: "AB",
+                fontSize: 16,
+                color: MyColors.whiteColor,
+              ),
             ),
           ),
         ],
