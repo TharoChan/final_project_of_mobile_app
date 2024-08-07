@@ -40,7 +40,7 @@ class _DeveloperScreenState extends State<DeveloperScreen> {
             ProfileCard(
               name: 'Liza John',
               specialization:
-                  'CS specialized in Software Engineering Year 3 at CADT',
+                  'CS specialized in Ecommerce Year 3 at CADT',
               description: 'Does the Developer Screen UI',
               date: 'July-3rd-2024',
               image:
