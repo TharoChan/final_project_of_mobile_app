@@ -15,7 +15,7 @@ dependencies:
   auto_size_text: ^3.0.0
   animations: ^2.0.11
   flutter_barcode_scanner: ^2.0.0
-  video_player: ^2.9.1
+  video_player: ^2.9.2
 
   bloc: ^8.1.3
   flutter_bloc: ^8.1.4
