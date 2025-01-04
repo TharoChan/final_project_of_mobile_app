@@ -53,7 +53,7 @@ class PlaylistSearchScreen extends StatelessWidget {
               }
               return const Center(
                 child: Text(
-                  "Snap! Error Happened",
+                  "Snap! Error Happened ",
                   style: TextStyle(
                     fontFamily: "AB",
                     fontSize: 18,
